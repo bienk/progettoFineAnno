@@ -1,7 +1,8 @@
-<form [formGroup] = "f1" (ngSubmit) = "onSubmit()" >
-    <input type = "text" [formControl] = "f1.controls ['nome']"> 
-    <input type = "text" [formControl] = "f1.controls ['cognome']"> 
-    <input type = "email" [formControl] = "f1.controls ['email']"> 
-    <input type ="number" [formControl] = "f1.controls ['cellulare']"> >
-    <input type ="password" [formControl] = "f1.controls ['password']"> >
+<form [formGroup] = "f1" (ngSubmit) = "onSubmit()" >  <!-- tag per definire la form, f1 nome, ngSubmit bottone per input 1 -->
+    Nome <input type = "text" [formControl] = "f1.controls ['nome']">  <!-- tag per input con tipo e nome 2  -->
+    Cognome <input type = "text" [formControl] = "f1.controls ['cognome']"> 
+    Email <input type = "email" [formControl] = "f1.controls ['email']"> 
+    Cellulare <input type ="number" [formControl] = "f1.controls ['cellulare']"> >
+    Password<input type ="password" [formControl] = "f1.controls ['password']"> >
  </form>
+ <!--   -->
