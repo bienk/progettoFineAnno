@@ -12,9 +12,11 @@ import {bacheca} from './bacheca'; //importo la classe creata  (se siamo nell'ap
 export class AppComponent {
   title = 'Bacheca';
   f1: FormGroup; //dichiaro la form dopo aver scritto l'input
-  input : bacheca; // creo un oggetto di tipo bacheca
+  input : bacheca; // creo un oggetto di tipo bacheca ****
+  vettUtenti : bacheca[]; //creo un vettore di tipo bacheca per contenere tutti gli utenti 
   //creiamo il costruttore della form
   constructor(fb: FormBuilder){
+    this.vettUtenti = new Array(); // costruisco un vettore vuoto
     this.f1 = fb.group({
       'nome' : ['NOME',Validators.required],   // nome è l'input, 'NOME' è il valore di default nel campo input, validators controlla se è giusto 
       'cognome' : ['COGNOME',Validators.required],
@@ -29,8 +31,18 @@ export class AppComponent {
     if(!this.f1.invalid) // se tutti gli imput sono ok 
     {
       
-      let x = this.f1.controls['nome'].value + this.f1.controls['cognome'].value + this.f1.controls['email'].value + this.f1.controls['password'].value + this.f1.controls['cellulare'].value ;
-      // let (una variabile che puo essere di tutti i tipi )
+
+      this.input = new bacheca(); //creo con il nome che ho dato prima l'oggetto di tipo bacheca ****
+      
+      //Assegno gli input 
+      
+      this.input.nome =  this.f1.controls['nome'].value
+      this.input.cognome =  this.f1.controls['cognome'].value
+      this.input.email =  this.f1.controls['email'].value
+      this.input.password =  this.f1.controls['password'].value
+      this.input.cellulare =  this.f1.controls['cellulare'].value ;
+      
+      this.vettUtenti.push(this.input);  //aggiunge utente al vettore
       
     }
   }
