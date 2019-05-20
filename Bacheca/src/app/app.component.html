@@ -1,9 +1,11 @@
 <form [formGroup] = "f1" (ngSubmit) = "onSubmit()" >  <!-- tag per definire la form, f1 nome, ngSubmit bottone per input 1 -->
+
     Nome <input type = "text" [formControl] = "f1.controls ['nome']">  <!-- tag per input con tipo e nome 2  -->
     Cognome <input type = "text" [formControl] = "f1.controls ['cognome']"> 
     Email <input type = "email" [formControl] = "f1.controls ['email']"> 
     Cellulare <input type ="number" [formControl] = "f1.controls ['cellulare']"> >
     Password<input type ="password" [formControl] = "f1.controls ['password']"> >
-    <button (click) = "onSubmit()"></button> // visualizzo il bottone
+    <button>click</button>  <!--  visualizzo il bottone -->  
  </form>
+ <app-elenco [nomeVariabile] = "vettUtenti" ></app-elenco>  <!--  assegno i valori del vett utenti alla variabile nomeVariabile di tipo elenco -->
  <!--   -->
