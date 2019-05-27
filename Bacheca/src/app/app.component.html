@@ -1,11 +1,62 @@
-<form [formGroup] = "f1" (ngSubmit) = "onSubmit()" >  <!-- tag per definire la form, f1 nome, ngSubmit bottone per input 1 -->
+
+<div class="container">
+  
+
+  <form [formGroup] = "f1" (ngSubmit) = "onSubmit()" class="jumbotron" >  <!-- tag per definire la form, f1 nome, ngSubmit bottone per input 1 -->
 
     Nome <input type = "text" [formControl] = "f1.controls ['nome']">  <!-- tag per input con tipo e nome 2  -->
+    
+    
+<div *ngIf="!f1.controls['nome'].valid" 
+     class="alert alert-danger"> is invalid
+</div>
+<div *ngIf="f1.controls['nome'].hasError('required')" 
+     class="alert alert-danger"> is required
+</div>
+
+    
     Cognome <input type = "text" [formControl] = "f1.controls ['cognome']"> 
+    
+    <div *ngIf="!f1.controls['cognome'].valid" 
+     class="alert alert-danger"> is invalid
+</div>
+<div *ngIf="f1.controls['cognome'].hasError('required')" 
+     class="alert alert-danger"> is required
+</div>
+
+    
     Email <input type = "email" [formControl] = "f1.controls ['email']"> 
+    
+    <div *ngIf="!f1.controls['email'].valid" 
+     class="alert alert-danger"> is invalid
+</div>
+<div *ngIf="f1.controls['email'].hasError('required')" 
+     class="alert alert-danger"> is required
+</div>
+
+    
     Cellulare <input type ="number" [formControl] = "f1.controls ['cellulare']"> >
+    
+    <div *ngIf="!f1.controls['cellulare'].valid" 
+     class="alert alert-danger"> is invalid
+</div>
+<div *ngIf="f1.controls['cellulare'].hasError('required')" 
+     class="alert alert-danger"> is required
+</div>
+
+    
     Password<input type ="password" [formControl] = "f1.controls ['password']"> >
+    
+    <div *ngIf="!f1.controls['password'].valid" 
+     class="alert alert-danger"> is invalid
+</div>
+<div *ngIf="f1.controls['password'].hasError('required')" 
+     class="alert alert-danger"> is required
+</div>
+
+    
     <button>click</button>  <!--  visualizzo il bottone -->  
  </form>
  <app-elenco [nomeVariabile] = "vettUtenti" ></app-elenco>  <!--  assegno i valori del vett utenti alla variabile nomeVariabile di tipo elenco -->
  <!--   -->
+</div>
